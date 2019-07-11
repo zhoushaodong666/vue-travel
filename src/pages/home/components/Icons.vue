@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper>
+        <swiper :options="swiperOption">
             <swiper-slide v-for="(page,index) of pages" :key="index">
                 <div class="icon" v-for="item of page" :key="item.id">
                     <div class="icon-img">
@@ -18,6 +18,7 @@
 <script>
 	export default {
 		name: "HomeIcons",
+
 		data() {
 			return {
 				iconList: [
@@ -37,7 +38,7 @@
 						id: "0004",
 						imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png",
 						desc: "自然风光"
-					},{
+					}, {
 						id: "0005",
 						imgUrl: "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
 						desc: "景点门票"
@@ -58,22 +59,25 @@
 						imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/c032ae43b15a3dac34b5e07bb0e46850.png",
 						desc: "广州塔"
 					},
-				]
+				],
+				swiperOption: {
+					autoplay: false
+				}
 			}
 		},
-        computed:{
-			pages (){
+		computed: {
+			pages() {
 				const pages = []
-                this.iconList.forEach((item,index) =>{
-                	const page = Math.floor(index/8)
-                    if(!pages[page]){
-                    	pages[page] = []
-                    }
-                    pages[page].push(item)
-                })
-                return pages
-            }
-        }
+				this.iconList.forEach((item, index) => {
+					const page = Math.floor(index / 8)
+					if (!pages[page]) {
+						pages[page] = []
+					}
+					pages[page].push(item)
+				})
+				return pages
+			}
+		}
 	}
 </script>
 
@@ -83,37 +87,38 @@
     .icons >>> .swiper-container
         height: 0
         padding-bottom: 50%
-
-    .icon
-        position: relative
-        overflow: hidden
-        float: left
-        width: 25%
-        height: 0
-        padding-bottom: 25%
-        .icon-img
-            position: absolute
-            top: 0
-            left: 0
-            right: 0
-            bottom: .44rem
-            box-sizing: border-box
-            padding: .1rem
-            .icon-img-content
-                display: block
-                margin: 0 auto
-                height: 100%
-        .icon-desc
-            position: absolute
-            left: 0
-            right: 0
-            bottom: 0
-            line-height: .44rem
-            text-align: center
-            height: .44rem
-            margin-top: .44rem
-            color: $darkTextColor
-            ellopsis()
+    .icons
+        margin-top: .1rem
+        .icon
+            position: relative
+            overflow: hidden
+            float: left
+            width: 25%
+            height: 0
+            padding-bottom: 25%
+            .icon-img
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: .44rem
+                box-sizing: border-box
+                padding: .1rem
+                .icon-img-content
+                    display: block
+                    margin: 0 auto
+                    height: 100%
+            .icon-desc
+                position: absolute
+                left: 0
+                right: 0
+                bottom: 0
+                line-height: .44rem
+                text-align: center
+                height: .44rem
+                margin-top: .44rem
+                color: $darkTextColor
+                ellopsis()
 
 
 </style>
