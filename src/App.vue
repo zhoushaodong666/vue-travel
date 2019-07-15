@@ -1,15 +1,19 @@
 <template>
-  <div id="app">
+    <div id="app">
 
-      <!-- 显示的是当前路由地址所对应的内容 -->
-    <router-view/>
-  </div>
+
+        <keep-alive>
+            <!-- 显示的是当前路由地址所对应的内容 -->
+            <router-view/>
+        </keep-alive>
+
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+	export default {
+		name: 'App'
+	}
 </script>
 
 <style>
