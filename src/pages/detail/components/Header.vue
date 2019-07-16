@@ -37,7 +37,11 @@
             }
         },
         activated (){
+			// 全局组件会在其他页面也起作用
 			window.addEventListener('scroll',this.handleScroll)
+        },
+        deactivated (){
+			window.removeEventListener('scroll',this.handleScroll)
         }
 	}
 </script>
