@@ -69,5 +69,5 @@
 
 <style lang="stylus" scoped>
     .content
-        height: 30rem
+        height: 40rem
 </style>
