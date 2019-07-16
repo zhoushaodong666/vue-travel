@@ -41,6 +41,7 @@
 			window.addEventListener('scroll',this.handleScroll)
         },
         deactivated (){
+			// 移除全局组件
 			window.removeEventListener('scroll',this.handleScroll)
         }
 	}
