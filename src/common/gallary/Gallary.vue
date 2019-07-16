@@ -39,7 +39,7 @@
 		},
 		methods: {
 			handleGallaryClick() {
-                this.$emit('close')
+				this.$emit('close')
 			}
 		}
 	}
@@ -48,7 +48,6 @@
 <style lang="stylus" scoped>
     .container >>> .swiper-container
         overflow: inherit
-
     .container
         display: flex
         flex-direction: column
@@ -61,8 +60,8 @@
         bottom: 0
         background: #000
         .wrapper
-            width: 100%
             height: 0
+            width: 100%
             padding-bottom: 100%
             .gallary-img
                 width: 100%
