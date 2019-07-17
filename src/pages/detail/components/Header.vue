@@ -25,22 +25,23 @@
         },
         methods:{
 	        handleScroll(){
-	        	const top  = document.documentElement.scrollTop
-	        	if(top>60 ){
-	        		let opacity = top/140
-                    opacity = opacity>1?1:opacity
-                   this.opacityStyle = {opacity}
-	        		this.showAbs = false
-                }else{
-	        		this.showAbs =true
-                }
-            }
+		        const top = document.documentElement.scrollTop
+		        if (top > 60) {
+			        let opacity = top / 140
+			        opacity = opacity > 1 ? 1 : opacity
+			        this.opacityStyle = { opacity }
+			        this.showAbs = false
+		        } else {
+			        this.showAbs = true
+		        }
+	        }
         },
-        activated (){
+		mounted (){
+			console.log('scroll')
 			// 全局组件会在其他页面也起作用
 			window.addEventListener('scroll',this.handleScroll)
         },
-        deactivated (){
+		destroyed (){
 			// 移除全局组件
 			window.removeEventListener('scroll',this.handleScroll)
         }
@@ -69,7 +70,6 @@
         left :0
         right :0
         height :$headerHeight
-        height: $headerHeight
         line-height: $headerHeight
         text-align: center
         color: #fff
